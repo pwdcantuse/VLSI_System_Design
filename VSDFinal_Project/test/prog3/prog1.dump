@@ -1,0 +1,81 @@
+
+prog1.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_answer-0x9000>:
+   0:	00100293          	li	t0,1
+   4:	00100313          	li	t1,1
+   8:	10000f13          	li	t5,256
+   c:	025303b3          	mul	t2,t1,t0
+  10:	007f2023          	sw	t2,0(t5)
+  14:	004f0f13          	addi	t5,t5,4
+  18:	00128293          	addi	t0,t0,1
+  1c:	025303b3          	mul	t2,t1,t0
+  20:	007f2023          	sw	t2,0(t5)
+  24:	004f0f13          	addi	t5,t5,4
+  28:	00128293          	addi	t0,t0,1
+  2c:	025303b3          	mul	t2,t1,t0
+  30:	007f2023          	sw	t2,0(t5)
+  34:	004f0f13          	addi	t5,t5,4
+  38:	00128293          	addi	t0,t0,1
+  3c:	025303b3          	mul	t2,t1,t0
+  40:	007f2023          	sw	t2,0(t5)
+  44:	004f0f13          	addi	t5,t5,4
+  48:	00128293          	addi	t0,t0,1
+  4c:	025303b3          	mul	t2,t1,t0
+  50:	007f2023          	sw	t2,0(t5)
+  54:	004f0f13          	addi	t5,t5,4
+  58:	00128293          	addi	t0,t0,1
+  5c:	025303b3          	mul	t2,t1,t0
+  60:	007f2023          	sw	t2,0(t5)
+  64:	004f0f13          	addi	t5,t5,4
+  68:	00128293          	addi	t0,t0,1
+  6c:	025303b3          	mul	t2,t1,t0
+  70:	007f2023          	sw	t2,0(t5)
+  74:	004f0f13          	addi	t5,t5,4
+  78:	00128293          	addi	t0,t0,1
+  7c:	025303b3          	mul	t2,t1,t0
+  80:	007f2023          	sw	t2,0(t5)
+  84:	004f0f13          	addi	t5,t5,4
+  88:	00128293          	addi	t0,t0,1
+  8c:	025303b3          	mul	t2,t1,t0
+  90:	007f2023          	sw	t2,0(t5)
+  94:	004f0f13          	addi	t5,t5,4
+  98:	00128293          	addi	t0,t0,1
+  9c:	025303b3          	mul	t2,t1,t0
+  a0:	007f2023          	sw	t2,0(t5)
+  a4:	004f0f13          	addi	t5,t5,4
+  a8:	00128293          	addi	t0,t0,1
+  ac:	025303b3          	mul	t2,t1,t0
+  b0:	007f2023          	sw	t2,0(t5)
+  b4:	004f0f13          	addi	t5,t5,4
+  b8:	00128293          	addi	t0,t0,1
+  bc:	025303b3          	mul	t2,t1,t0
+  c0:	007f2023          	sw	t2,0(t5)
+  c4:	004f0f13          	addi	t5,t5,4
+  c8:	00128293          	addi	t0,t0,1
+  cc:	025303b3          	mul	t2,t1,t0
+  d0:	007f2023          	sw	t2,0(t5)
+  d4:	004f0f13          	addi	t5,t5,4
+  d8:	00128293          	addi	t0,t0,1
+  dc:	025303b3          	mul	t2,t1,t0
+  e0:	007f2023          	sw	t2,0(t5)
+  e4:	004f0f13          	addi	t5,t5,4
+  e8:	00128293          	addi	t0,t0,1
+  ec:	025303b3          	mul	t2,t1,t0
+  f0:	007f2023          	sw	t2,0(t5)
+  f4:	004f0f13          	addi	t5,t5,4
+  f8:	00128293          	addi	t0,t0,1
+  fc:	025303b3          	mul	t2,t1,t0
+ 100:	007f2023          	sw	t2,0(t5)
+ 104:	004f0f13          	addi	t5,t5,4
+ 108:	00128293          	addi	t0,t0,1
+ 10c:	025303b3          	mul	t2,t1,t0
+ 110:	007f2023          	sw	t2,0(t5)
+ 114:	004f0f13          	addi	t5,t5,4
+ 118:	00128293          	addi	t0,t0,1
+ 11c:	025303b3          	mul	t2,t1,t0
+ 120:	007f2023          	sw	t2,0(t5)
+ 124:	00008067          	ret

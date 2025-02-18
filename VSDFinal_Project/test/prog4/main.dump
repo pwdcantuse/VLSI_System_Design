@@ -1,0 +1,76 @@
+
+prog.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <main-0x4>:
+   0:	fff00093          	li	ra,-1
+
+00000004 <main>:
+   4:	00008517          	auipc	a0,0x8
+   8:	ffc50513          	addi	a0,a0,-4 # 8000 <test1>
+   c:	00008597          	auipc	a1,0x8
+  10:	00458593          	addi	a1,a1,4 # 8010 <TEST1_SIZE>
+  14:	0005a583          	lw	a1,0(a1)
+  18:	00008697          	auipc	a3,0x8
+  1c:	ffc6a683          	lw	a3,-4(a3) # 8014 <ANSWER>
+  20:	00008617          	auipc	a2,0x8
+  24:	ff862603          	lw	a2,-8(a2) # 8018 <FIN>
+  28:	00052283          	lw	t0,0(a0)
+  2c:	00452303          	lw	t1,4(a0)
+  30:	00852383          	lw	t2,8(a0)
+  34:	00c52e03          	lw	t3,12(a0)
+  38:	d002f053          	fcvt.s.w	ft0,t0
+  3c:	d00370d3          	fcvt.s.w	ft1,t1
+  40:	d003f153          	fcvt.s.w	ft2,t2
+  44:	d00e71d3          	fcvt.s.w	ft3,t3
+  48:	00107253          	fadd.s	ft4,ft0,ft1 // 1+2 = 3
+  4c:	c0027ed3          	fcvt.w.s	t4,ft4    // 3 = 3
+  50:	083172d3          	fsub.s	ft5,ft2,ft3 // 3-4 = -1
+  54:	c002ff53          	fcvt.w.s	t5,ft5    // -1 = -1
+  58:	10527353          	fmul.s	ft6,ft4,ft5 // 3*-1 = -3
+  5c:	c0037fd3          	fcvt.w.s	t6,ft6    // -3 = -3
+  60:	0006a027          	fsw	ft0,0(a3) // 1 = 0x3f80_0000  = (0)_8'd127_(1.)000...
+  64:	0016a227          	fsw	ft1,4(a3) // 2 = 0x4000_0000  = (0)_8'd128_(1.)000...
+  68:	0026a427          	fsw	ft2,8(a3) // 3 = 0x4040_0000  = (0)_8'd128_(1.)100...
+  6c:	0036a627          	fsw	ft3,12(a3)// 4 = 0x4080_0000  = (0)_8'd129_(1.)000...
+  70:	0046a827          	fsw	ft4,16(a3)// 3 = 0x4040_0000  = (0)_8'd128_(1.)100...
+  74:	0056aa27          	fsw	ft5,20(a3)// -1 = 0xbf80_0000 = (1)_8'd127_(1.)000...
+  78:	0066ac27          	fsw	ft6,24(a3)// -3 = 0xc040_0000 = (1)_8'd128_(1.)100...
+  7c:	c00072d3          	fcvt.w.s	t0,ft0
+  80:	c000f353          	fcvt.w.s	t1,ft1
+  84:	c00173d3          	fcvt.w.s	t2,ft2
+  88:	c001fe53          	fcvt.w.s	t3,ft3
+  8c:	0056ae23          	sw	t0,28(a3) // 1
+  90:	0266a023          	sw	t1,32(a3) // 2
+  94:	0276a223          	sw	t2,36(a3) // 3
+  98:	03c6a423          	sw	t3,40(a3) // 4
+  9c:	03d6a623          	sw	t4,44(a3) // 3
+  a0:	03e6a823          	sw	t5,48(a3) // -1
+  a4:	03f6aa23          	sw	t6,52(a3) // -3
+  a8:	bfc008b7          	lui	a7,0xbfc00
+  ac:	00001837          	lui	a6,0x1
+  b0:	90080813          	addi	a6,a6,-1792 # 900 <main+0x8fc>
+  b4:	01182023          	sw	a7,0(a6)
+  b8:	00082287          	flw	ft5,0(a6)    // freg[5] = 1.5
+  bc:	c012ff53          	fcvt.wu.s	t5,ft5 // fpu_out = 1
+  c0:	f00f02d3          	fmv.w.x	ft5,t5   // reg[30] = 1
+  c4:	fe800f93          	li	t6,-24       // reg[31] = 0xffff_ffe8
+  c8:	d01ff353          	fcvt.s.wu	ft6,t6 // freg[6] = 0x4f7f_ffff = (0)_8'd158_(1.)111...
+  cc:	e0030fd3          	fmv.x.w	t6,ft6   // reg[6] = 0x4f7f_ffff
+  d0:	00000813          	li	a6,0
+  d4:	ff8008b7          	lui	a7,0xff800
+  d8:	fff88893          	addi	a7,a7,-1 # ff7fffff <FIN+0xff7f7fe7>
+  dc:	f0080353          	fmv.w.x	ft6,a6
+  e0:	f00883d3          	fmv.w.x	ft7,a7
+  e4:	00000013          	nop
+  e8:	00000013          	nop
+  ec:	00000013          	nop
+  f0:	00000013          	nop
+  f4:	00000013          	nop
+  f8:	0073f3d3          	fadd.s	ft7,ft7,ft7
+  fc:	00637353          	fadd.s	ft6,ft6,ft6
+ 100:	0ff00413          	li	s0,255
+ 104:	00862023          	sw	s0,0(a2)
+ 108:	00008067          	ret
